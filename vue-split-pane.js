@@ -468,7 +468,7 @@ function() {
                         }
                     }), r._v(" "), s("pane", {
                         staticClass: "splitter-pane splitter-paneM",
-                        style: (n = {},n[c]=r.percent+ "%",n[r.type] = 100 - (r.percent + r.percentR) + "%", n),
+                        style: (n = {},n[r.resizeType]=r.percent+ "%",n[r.type] = 100 - (r.percent + r.percentR) + "%", n),
                         attrs: {
                             split: r.split
                         }
