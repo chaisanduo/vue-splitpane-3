@@ -308,13 +308,13 @@ function() {
                                 document.getElementsByClassName("vue-splitter-container-mask")[0].style.right=this.percentR+'%'
                                 document.getElementsByClassName("vue-splitter-container-mask")[0].style.top='0px'
                                 s > this.minPercent && s < 100 - this.minPercent &&(this.percentR = 100-Number(s.toFixed(0))),//(this.percentR = s)
-                                this.$emit("resize", this.percentR),
+                                this.$emit("resize", [this.percentR,flogmovetarget]),
                                 this.hasMoved = !0
                             }else{
                                 document.getElementsByClassName("vue-splitter-container-mask")[0].style.left='0px'
                                 document.getElementsByClassName("vue-splitter-container-mask")[0].style.top='0px'
                                 s > this.minPercent && s < 100 - this.minPercent && (this.percent = s),
-                                this.$emit("resize", this.percent),
+                                this.$emit("resize", [this.percent,flogmovetarget]),
                                 this.hasMoved = !0
                             }
                             
@@ -475,7 +475,7 @@ function() {
                     },
                     [r._t("paneM")], 2), r._v(" "),s("resizer", {
                         staticClass: "splitter-pane-resizerR",
-                        style: (t = {},
+                        style: (t = {},//t[c]=r.percent+ "%",
                         t[r.resizeType] = (r.percent+100 - (r.percent+r.percentR)) + "%", t),
                         attrs: {
                             className: r.className,
